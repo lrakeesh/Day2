@@ -6,7 +6,7 @@ metadata:
   labels:
     app: hello-web
 spec:
-  replicas: 1                   # Tells Kubernetes to run 1 pod instance
+  replicas: 2                   # Tells Kubernetes to run 1 pod instance
   selector:
     matchLabels:
       app: hello-web
