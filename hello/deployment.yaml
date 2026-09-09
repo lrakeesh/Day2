@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-pod-deployment
+  namespace: default
+  labels:
+    app: hello-web
+spec:
+  replicas: 1                   # Tells Kubernetes to run 1 pod instance
+  selector:
+    matchLabels:
+      app: hello-web
+  template:                     # This template defines what the pod looks like
+    metadata:
+      labels:
+        app: hello-web
+    spec:
+      containers:
+      - name: nginx-container
+        image: nginx:alpine     # A lightweight web server image
+        ports:
+        - containerPort: 80     # Opens port 80 inside the container
